@@ -11,7 +11,7 @@ image:
   # Image was built from
   # https://github.com/timescale/timescaledb-docker-ha
   repository: timescale/timescaledb-ha
-  tag: pg12-ts2.0.0-p0
+  tag: pg13.3-ts2.3.1-latest
   pullPolicy: IfNotPresent
 
 # Credentials used by PostgreSQL
@@ -37,7 +37,7 @@ env:
 
 persistentVolume:
   enabled: true
-  size: 5G
+  size: 20G
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -65,7 +65,7 @@ resources: {}
 postgresql:
   databases:
     - postgres
-    - example
+    - sol_indexer
   parameters:
     max_connections: 100
     max_prepared_transactions: 150
